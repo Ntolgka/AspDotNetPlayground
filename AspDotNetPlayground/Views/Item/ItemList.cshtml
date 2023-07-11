@@ -1,0 +1,45 @@
+﻿@using AspDotNetPlayground.Models;
+@model List<Item>
+
+@{
+    ViewBag.Title = "ItemList";
+}
+
+<h2>ItemList</h2>
+<hr />
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Picture</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@item.Picture" style="max-width: 30%; max-height: 30%;" />
+                </td>
+                <td>@item.ItemName</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="/Item/Details/@item.ItemId" class="btn btn-primary"> Detay </a>
+                </td>
+            </tr>
+
+
+        }
+
+    </tbody>
+
+</table>

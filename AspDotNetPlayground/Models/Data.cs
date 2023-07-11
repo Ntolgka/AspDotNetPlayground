@@ -27,7 +27,7 @@ namespace AspDotNetPlayground.Models
             get { return _list; }
         }
 
-        public static void addItem(Item entity)
+        public static void AddItem(Item entity)
         {
             _list.Add(entity);
         }

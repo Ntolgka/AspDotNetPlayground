@@ -28,5 +28,18 @@ namespace AspDotNetPlayground.Controllers
 
             return View(item);
         }
+
+        [HttpGet]
+        public ActionResult AddItem()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddItem(Item entity)
+        {
+            Data.AddItem(entity);
+
+            return View("ItemList", Data.List);
+        }
     }
 }
